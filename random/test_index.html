@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+
+<script>
+
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+
+
+  ga('create', 'UA-80769139-1', 'auto');
+
+  ga('send', 'pageview');
+
+
+
+</script>
+
+	<meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="webm, webm host, webm upload, webm sharing, webm edit, webm convert">
+    <meta name="description" content="upload webm files. share webm files. webm hosting. convert gif, avi, mp4 to webm">
+    <link rel="shortcut icon" href="../img/favicon.ico" type="image/ico"/>
+
+	<title>webmLOVERS</title>
+	<link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link type="text/css" rel="stylesheet" href="../css/style.css">
+	<link type="text/css" rel="stylesheet" href="../css/materialize.css" media="screen,projection"/>
+
+</head>
+<body>
+	
+	<!-- Navbar -->
+	<nav class="light-blue darken-2" role="navigation">
+	    <div class="nav-wrapper container">
+	  	  <a id="logo-container" href="index.html" class="brand-logo"><img class="logo-webmlovers" src="img/logo_uno.png" alt="logo"></a>
+	      <ul class="right hide-on-med-and-down">
+	        <li><a href="index.html"><i class="small material-icons left">publish</i>SUBIR</a></li>
+	        <li><a href="contacto.html"><i class="small material-icons left">email</i>CONTACTO</a></li>
+			
+			<li><a href="contacto.html"><i class="small material-icons left">shuffle</i>RANDOM</a></li>
+	      </ul>
+
+	      <ul id="nav-mobile" class="side-nav">
+	        <li><a href="index.html"><i class="small material-icons left">publish</i>SUBIR</a></li>
+	        <li><a href="contacto.html"><i class="small material-icons left">email</i>CONTACTO</a></li>
+			i><a href="contacto.html"><i class="small material-icons left">shuffle</i>RANDOM</a></li>
+	      </ul>
+	      <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+	    </div>
+  	</nav>
+	
+	<!-- Contenido -->
+	<div class="container">
+
+		<div class="section">
+
+			<h5>VIDEO REANDOM</h5>
+			<div class="row">
+
+				<div class="faq col s12 flow-text">
+			
+					<?php
+					//CONTADOR
+					$dir = array_slice(scandir('../files'), 3);
+					$total = count(glob("../files/{*.webm,*.gif}",GLOB_BRACE));
+					//RANDOM
+					$random_video = mt_rand(3, $total);
+					//COMPROBAR EXTENSIÓN
+					$ext = pathinfo( $dir[$random_video], PATHINFO_EXTENSION );
+						if ($ext == gif){
+							print_r($dir[$random_video]);
+							echo "<img src='http://webmlovers.xyz/files/$dir[$random_video]'>";
+						}
+						else{
+							print_r($dir[$random_video]);
+							echo "<video src='http://webmlovers.xyz/files/$dir[$random_video]' type='video/webm' controls width='250px' height='250px' border='55'>";
+						}
+					?>
+
+				</div>
+
+			</div>
+			
+			<br><div class="divider"></div>
+			
+			<!-- Pie de página -->
+			<footer>
+				<div class="row">
+
+					<div class="col s10">
+						<small>
+
+							  <!-- Modal Trigger -->
+  <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Modalll</a>
+
+  <!-- Modal Structure -->
+  <div id="modal1" class="modal">
+    <div class="modal-content">
+      <h4>Modal Header</h4>
+      <p>A bunch of text</p>
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
+    </div>
+  </div>
+
+
+<!-- Modal Trigger -->
+  <a class="waves-effect waves-light btn modal-trigger" href="#modal2">Modal</a>
+
+  <!-- Modal Structure -->
+  <div id="modal2" class="modal modal-fixed-footer">
+    <div class="modal-content">
+      <h4>Modal Header</h4>
+      <p>A bunch of text</p>
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat ">Agree</a>
+    </div>
+  </div>
+
+
+							<a href="terminos.html">términos y condiciones</a>&nbsp;&nbsp;&nbsp;
+							<a href="faq.html">faq</a>
+							<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+								<input type="hidden" name="cmd" value="_s-xclick">
+								<input type="hidden" name="hosted_button_id" value="BMX56ZDD6YX3L">
+								<input type="image" src="https://www.paypalobjects.com/es_ES/ES/i/btn/btn_donate_SM.gif" border="0" name="submit" alt="PayPal. La forma r?da y segura de pagar en Internet.">
+							</form>
+						</small>
+					</div>
+					<div class="col s2">
+						<small>©2017 - Host Webm</small>
+					</div>
+					
+				</div><br><br>
+			</footer>
+
+		</div>
+
+	</div>
+	
+<script src="js/jquery.min.js"></script>
+<script src="js/materialize.min.js"></script>
+<script src="js/scripts.js"></script>
+</body>
+</html>
